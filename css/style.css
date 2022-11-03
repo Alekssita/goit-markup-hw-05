@@ -155,8 +155,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 16px;
-	height: 12px;
+
 	fill: var(--main-icons);
 	background-color: var(--main-light);
 	margin-right: 10px;
