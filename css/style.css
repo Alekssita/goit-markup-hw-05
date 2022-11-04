@@ -14,6 +14,10 @@
 	--border-goods: #eeeeee;
 	--main-clients: #f5f5f5;
 	--main-icons: #afb1b8;
+
+/*background*/
+
+--main-background: rgba(33, 150, 243, 0.9);
 }
 
 .container {
@@ -110,20 +114,22 @@ body {
 .link-nav:not(:last-child) {
 	margin-right: 50px;
 }
+
 .link-nav {
+display: block;
 	margin-left: auto;
 	padding-top: 32px;
-	padding-bottom: 32px;
 	text-decoration: none;
-	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	font-family: var(--main-font);
 	font-weight: 500;
 	letter-spacing: 0.02em;
 	color: var(--main-dark);
 	font-style: normal;
 	transition: color 250ms;
+	
 }
+
 .link-nav-contact {
 	margin-left: auto;
 	padding-top: 32px;
@@ -136,28 +142,44 @@ body {
 	letter-spacing: 0.02em;
 	color: var(--main-color-font);
 	font-style: normal;
-	transition: color 250ms;
+	transition: color 2500ms;
 }
+.link-nav::after {
+	display: block;
+	margin-top: 28px;
+	width: 100%;
+	height: 4px;
+	background-color: var(--secondary-color);
+	content: '';
+	opacity: 0;
+	transition: opacity 250ms;
+	border-radius: 2px;
+	}
 
-.link-nav:hover,
-.link-nav:focus {
-	color: var(--secondary-color);
-	text-decoration: none;
-}
+	.link-nav:hover, 
+	.link-nav:focus,
+	.link-nav:hover::after {
+		color: var(--secondary-color);
+		text-decoration: none;
+		opacity: 1;
+		transition: color var(--secondary-color) 250ms;
+	}
+
 .link-nav-contact:hover {
 	color: var(--secondary-color);
 	text-decoration: none;
+	transition: color 250ms;
 }
 
 .link-nav-icon:hover {
 	fill: var(--secondary-color);
 }
 
+
 .link-nav-icon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	fill: var(--main-icons);
 	background-color: var(--main-light);
 	margin-right: 10px;
@@ -376,9 +398,10 @@ body {
 	flex-wrap: wrap;
 	gap: 30px;
 	margin-top: 50px;
-}
+	}
 
 .goods-item {
+	position: relative;
 	max-width: 370px;
 	gap: 30px;
 	list-style: none;
@@ -388,9 +411,14 @@ body {
 	line-height: 2;
 	letter-spacing: 0.06em;
 	color: var(--main-dark);
+	overflow: hidden;
+	
 }
-.goods-item:hover {
+.goods-item:hover .goods-item-discription {
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+	transform: translateY(0);
+	background: var(--main-background);
+	
 }
 
 .goods-title {
@@ -401,8 +429,27 @@ body {
 	color: var(--main-dark);
 }
 .goods-item-photo:hover {
-	background: rgba(33, 150, 243, 0.9);
+	background: var(--main-background);
 }
+.goods-item-discription {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 294px;
+	padding: 63px 24px;
+font-weight: 400;
+font-size: 18px;
+line-height: 1.55;
+letter-spacing: 0.03em;
+color: var(--main-light);
+background: rgba(0);
+transform: translateY(100%);
+transition: transform 250ms opacity 250ms;
+background: var(--main-background);
+
+}
+
 
 .goods-item-content {
 	padding: 20px 24px;
@@ -562,6 +609,7 @@ padding-bottom: 20px;
 	height: 100%;
 	z-index: 1;
 	background-color: rgba(0, 0, 0, 0.2);
+	transition: opacity 250ms, visibility 250ms;
 	}
 .is-hidden {
 	opacity: 0;
