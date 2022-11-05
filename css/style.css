@@ -183,6 +183,12 @@ body {
 	background-color: var(--main-light);
 	margin-right: 10px;
 	}
+	
+	img {
+display: block;
+height: auto;
+max-width: 100%;
+	}
 
 /*рішення для вашого бізнесу */
 .section-hero {
@@ -294,13 +300,16 @@ body {
 	height: 70px;
 }
 /*Чим ми займаємося*/
+.section-title-activity {
+position: relative;
+}
 
-.section-title-list {
-	position: relative;
-	}
-	.section-title-activity-name {
-		font-family: 'Roboto';
-	font-style: normal;
+.section-title-activity-name {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 27px 10px;
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 1.14;
@@ -308,22 +317,8 @@ body {
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
 	color: var(--main-light);
-	margin-top: -27px;
-
+	background: rgba(47, 48, 58, 0.8);
 	}
-
-.section-title-activity::before {
-	position: absolute;
-	display: block;
-	margin-left: auto;
-	content: '';
-	width: 370px;
-height: 70px;
-top: 224px;
-background:rgba(47, 48, 58, 0.8);
-align-items: flex-end;
-}
-
 
 /*Наша команда*/
 
