@@ -116,7 +116,7 @@ body {
 }
 
 .link-nav {
-display: block;
+	display: block;
 	margin-left: auto;
 	padding-top: 32px;
 	text-decoration: none;
@@ -293,6 +293,37 @@ display: block;
 	width: 70px;
 	height: 70px;
 }
+/*Чим ми займаємося*/
+
+.section-title-list {
+	position: relative;
+	}
+	.section-title-activity-name {
+		font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	text-align: center;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: var(--main-light);
+	margin-top: -27px;
+
+	}
+
+.section-title-activity::before {
+	position: absolute;
+	display: block;
+	margin-left: auto;
+	content: '';
+	width: 370px;
+height: 70px;
+top: 224px;
+background:rgba(47, 48, 58, 0.8);
+align-items: flex-end;
+}
+
 
 /*Наша команда*/
 
